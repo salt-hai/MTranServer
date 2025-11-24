@@ -55,8 +55,10 @@ WORKDIR /app
 COPY --from=builder /build/mtranserver /app/mtranserver
 
 # Create directories for data and models
+# fix  mkdir /app/models/en_zh-Hans: permission denied
 RUN mkdir -p /app/data /app/models && \
-    chown -R mtran:mtran /app
+    chown -R mtran:mtran /app && \
+    chmod -R 775 /app/data /app/models 
 
 # Switch to non-root user
 USER mtran
