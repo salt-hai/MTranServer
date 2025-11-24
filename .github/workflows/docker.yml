@@ -49,8 +49,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            xxnuo/mtranserver
-            ghcr.io/xxnuo/mtranserver
+            salthai/mtranserver
+            ghcr.io/salt-hai/mtranserver
           tags: |
             type=semver,pattern={{version}},value=${{ steps.latest_tag.outputs.tag }}
             type=semver,pattern={{major}}.{{minor}},value=${{ steps.latest_tag.outputs.tag }}
